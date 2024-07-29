@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Slider with Music</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="images/photo1.jpg" alt="Photo 1"></div>
+            <div class="slide"><img src="images/photo2.jpg" alt="Photo 2"></div>
+            <!-- Repeat for all images -->
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <div class="audio-player">
+        <audio controls>
+            <source src="music/music1.mp3" type="audio/mpeg">
+            <source src="music/music2.mp3" type="audio/mpeg">
+            <source src="music/music3.mp3" type="audio/mpeg">
+            <source src="music/music4.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

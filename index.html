@@ -48,11 +48,6 @@
     this.style.display = "none"; // Hide the button after the first click
   });
 </script>
-
-<!-- Add this play button to the HTML -->
-<div id="playButton" style="display: none;">
-  <button onclick="playAudio()">Play Music</button>
-</div>
 <!--
 <script>
   var hasPlayed = false;
@@ -85,6 +80,9 @@
 </script>
 -->
 <body>
+    <div id="playButton" style="display: none;">
+        <button onclick="playAudio()">Play Music</button>
+    </div>
     <div class="slider" style="background-image: url('images/background.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="slides">
             <!-- Image slides -->

@@ -1,20 +1,28 @@
-let slideIndex = 0;
-const slides = document.querySelector('.slides');
-const totalSlides = document.querySelectorAll('.slide').length;
+// js/script.js
 
-function changeSlide(n) {
-    slideIndex += n;
+let currentSlide = 0;
 
-    if (slideIndex >= totalSlides) {
-        slideIndex = 0;
-    } else if (slideIndex < 0) {
-        slideIndex = totalSlides - 1;
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slide');
+    if (index >= slides.length) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = slides.length - 1;
+    } else {
+        currentSlide = index;
     }
-
-    slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+    const offset = -currentSlide * 100;
+    document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
 }
 
-// Optional: Auto slide
+function changeSlide(step) {
+    showSlide(currentSlide + step);
+}
+
+// Initial call to show the first slide
+showSlide(currentSlide);
+
+// Optional: Auto-change slides every few seconds
 setInterval(() => {
     changeSlide(1);
-}, 5000);
+}, 4000); // Change slide every 3 seconds

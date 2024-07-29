@@ -6,6 +6,20 @@
     <title>Photo Slider with Music</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+<script>
+  var hasPlayed = false;
+  var audio = new Audio(
+    "https://raw.githubusercontent.com/DevSwist06/Faxiolo/blob/main/music/music1.mp3"
+  );
+  function playAudio() {
+    // This func will check if the file hasPlayed and then will disable after first interaction.
+    if (!hasPlayed) {
+      audio.play();
+      hasPlayed = true;
+    }
+  }
+  document.addEventListener("click", playAudio);
+</script>
 <body>
     <div>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/15oZvZtsYYw?si=SRRgcRF_NlaGQipc&controls=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
